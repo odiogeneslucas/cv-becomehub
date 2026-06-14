@@ -201,7 +201,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--accent)}
         <a class="btn primary" id="wa" target="_blank" rel="noopener" data-i="hero.cta_wa"></a>
         <a class="btn" href="#contato" data-i="hero.cta_contact"></a>
         <a class="btn" id="linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn" id="cvpdf" href="cv/Diogenes_Lucas_CV.pdf" download data-i="hero.cta_cv"></a>
+        <a class="btn" id="cvpdf" href="cv/Diogenes_Lucas_CV_PT.pdf" download data-i="hero.cta_cv"></a>
       </div>
     </div>
     <div class="photo" data-i="hero.photo"></div>
@@ -736,6 +736,10 @@ function render(){
   document.getElementById("wa").href = waUrl;
   document.getElementById("wa2").href = waUrl;
   document.getElementById("linkedin").href = CONFIG.linkedin;
+  // Alterna PDF do CV conforme idioma selecionado
+  const cvBtn = document.getElementById("cvpdf");
+  cvBtn.href     = lang==="pt" ? "cv/Diogenes_Lucas_CV_PT.pdf" : "cv/Diogenes_Lucas_CV_EN.pdf";
+  cvBtn.download = lang==="pt" ? "Diogenes_Lucas_CV_PT.pdf"    : "Diogenes_Lucas_CV_EN.pdf";
   document.getElementById("year").textContent = new Date().getFullYear();
   // lang toggle active
   document.querySelectorAll("#lang button").forEach(b=>b.classList.toggle("active",b.dataset.lang===lang));
