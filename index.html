@@ -372,8 +372,17 @@ const CONFIG = {
   whatsapp: "5511990274999",
   linkedin: "https://www.linkedin.com/in/diogenes-lucas",
   formEndpoint: "https://n8n.becomehub.com.br/webhook/cv",
-  matchAiEndpoint: "https://n8n.becomehub.com.br/webhook/match"
+  matchAiEndpoint: "https://n8n.becomehub.com.br/webhook/match",
+  pageviewEndpoint: "https://n8n.becomehub.com.br/webhook/pageview"
 };
+
+/* Rastreia visualização de página de forma não bloqueante */
+fetch(CONFIG.pageviewEndpoint, {
+  method: "POST",
+  headers: {"Content-Type": "application/json"},
+  body: JSON.stringify({ referrer: document.referrer || "", source: "cv.becomehub.com.br" }),
+  keepalive: true
+}).catch(function(){});
 
 /* ============================================================
    CURRÍCULO COMPLETO (usado pelo prompt do DeepSeek no N8N)
