@@ -52,7 +52,7 @@ h2{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:800;margin-bottom:8px;letter-s
 header{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:color-mix(in srgb,var(--bg) 80%,transparent);border-bottom:1px solid var(--border)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:62px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.01em}
-.brand .dot{width:26px;height:26px;border-radius:8px;background:var(--accent-grad);display:inline-block}
+.brand img{height:34px;width:auto;display:block}
 .controls{display:flex;align-items:center;gap:8px}
 .btn{border:1px solid var(--border);background:var(--card);color:var(--text);padding:9px 16px;border-radius:10px;font-weight:600;font-size:.9rem;cursor:pointer;transition:.18s;font-family:inherit}
 .btn:hover{transform:translateY(-1px);border-color:var(--accent)}
@@ -178,7 +178,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--accent)}
 
 <header>
   <div class="wrap nav">
-    <div class="brand"><span class="dot"></span> <span>becomeHub</span></div>
+    <div class="brand"><img src="logo-becomehub.png" alt="becomeHub"> <span>becomeHub</span></div>
     <div class="controls">
       <div class="toggle" id="lang">
         <button data-lang="pt" class="active">PT</button>
